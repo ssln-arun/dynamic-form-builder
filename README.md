@@ -1,69 +1,67 @@
-# React + TypeScript + Vite
+# Dynamic Form Builder
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+<br>
 
-Currently, two official plugins are available:
+## Overview
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+A React + TypeScript application that lets users create, customize, preview, and save forms dynamically.
+Forms are stored in the browser’s localStorage for persistence, with a clean Material UI interface.
 
-## Expanding the ESLint configuration
+## Tech Stack
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- **React (TypeScript)** – Component-based UI
+- **Redux Toolkit** – State management
+- **Material UI (MUI)** – Modern, responsive components
+- **UUID** – Unique ID generation for form fields
+- **LocalStorage** – Persistent storage without a backend
+  
+## Features
 
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+- **Add Multiple Field Types** – Text, Number, Textarea, Select, Radio, Checkbox, Date
+- **Field Validation Rules** – Required, min/max length, min/max value, email, password
+- **Drag-Like Reordering** – Move fields up or down
+- **Custom Options** – Add/remove select, radio, or checkbox options
+- **Live Preview** – See how the form will look before saving
+- **Local Save** – Save forms in localStorage with unique names
+- **Form Submission Validation** – Ensures rules are followed before submission
 
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
+## Project Preview
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/b91e4731-4592-4741-b0e0-f0ed76ab091e" alt="Screenshot 1" width="45%" />
+  <img src="https://github.com/user-attachments/assets/20cd61ec-310d-495d-a153-5db78b126d89" alt="Screenshot 2" width="45%" />
+</p>
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/adab83fa-2b5b-4cb2-9850-d751ea2f6d00" alt="Screenshot 3" width="45%" />
+  <img src="https://github.com/user-attachments/assets/77ab4c53-36de-478f-976c-20c2bfab15d9" alt="Screenshot 4" width="45%" />
+</p>
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+---
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## Installation
 
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+### Clone the repository:
+
+  ```bash
+  git clone https://github.com/ssln-arun/dynamic-form-builder.git
+  cd dynamic-form-builder
+  ```
+### Install Dependencies:
+  
+  ```bash
+  npm install
+  ```
+
+### Start the Development Server:
+
+  ```bash
+  npm run dev
+  ```
+Open http://localhost:5173/ in your browser.
+
+## Usage
+
+- When you **save a form**, it’s stored in the browser’s **localStorage**.
+- You can have **multiple saved forms** with **different names**.
+- **Saved forms** persist even after **refreshing the page**.
+  
